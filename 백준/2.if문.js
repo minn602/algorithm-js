@@ -40,3 +40,37 @@ if (
 } else {
   console.log(0);
 }
+
+//사분면 고르기
+const input = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
+const x = Number(input[0]);
+const y = Number(input[1]);
+if (x > 0 && y > 0) {
+  console.log(1);
+} else if (x < 0 && y > 0) {
+  console.log(2);
+} else if (x < 0 && y < 0) {
+  console.log(3);
+} else {
+  console.log(4);
+}
+
+const input = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split(" ");
+const h = parseInt(input[0]);
+const m = parseInt(input[1]);
+let total = 0;
+if (h === 0) {
+  total = 60 * 24 + m - 45;
+  console.log(parseInt(total / 60), total - parseInt(total / 60) * 60);
+} else {
+  total = 60 * h + m - 45;
+  console.log(parseInt(total / 60), total - parseInt(total / 60) * 60);
+}
