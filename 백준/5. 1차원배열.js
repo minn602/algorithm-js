@@ -130,20 +130,24 @@ let [n, ...arr] = require("fs")
   .trim()
   .split("\n");
 
-arr = arr.map((el) => Number(el));
+const n = Number(input[0]);
+// arr = input[1].split(" ");
+// arr = arr.map((el) => Number(el));
 
 for (let i = 0; i < n; i++) {
+  arr[i] = arr[i].trim().split(" ");
+  arr[i] = arr[i].map((el) => Number(el));
+
   let cnt = 0;
   let avg =
-    arr[i].reduce((a, b, i) => {
-      if (i !== 0) {
-        return a + b;
-      }
-    }, 0) / arr[i][0];
-  for (let j = 1; j < arr[0]; j++) {
+    arr[i].reduce((a, b) => {
+      return a + b;
+    }, -arr[i][0]) / arr[i][0];
+
+  for (let j = 1; j <= arr[0]; j++) {
     if (arr[i][j] > avg) {
       cnt++;
     }
   }
-  console.log(`${cnt / arr[i][0].toFixed(4)}%`);
+  console.log(`${((cnt / arr[i][0]) * 100).toFixed(3)}%`);
 }
