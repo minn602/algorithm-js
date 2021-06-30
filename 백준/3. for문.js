@@ -63,12 +63,39 @@ for (let i = 0; i < arr.length; i++) {
   console.log(parseInt(nums[0]) + parseInt(nums[1]));
 }
 
-//2741 문제
+//2741 문제 //?  계속 시간초과로 나옴
 //자연수 N이 주어졌을 때, 1부터 N까지 한 줄에 하나씩 출력하는 프로그램을 작성하시오.
 //입력 : 첫째 줄에 100,000보다 작거나 같은 자연수 N이 주어진다.
 //출력 : 첫째 줄부터 N번째 줄 까지 차례대로 출력한다.
-const input = require("fs").readFileSync("/dev/stdin").toString().trim();
-const n = parseInt(input);
+const input = require("fs").readFileSync("/dev/stdin").toString();
+
+const n = Number(input);
 for (let i = 1; i <= n; i++) {
   console.log(i);
+}
+
+//2742번 //? 런타임에러
+let input = requir("fs").readFileSync("/dev/stdin").toString().trim();
+
+input = Number(input);
+let answer = "";
+for (let i = input; i >= 1; i--) {
+  answer += i + "\n";
+}
+
+console.log(answer);
+
+//11021번
+let [n, ...arr] = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
+
+n = parseInt(n);
+
+for (let i = 0; i < n; i++) {
+  let arr2 = arr[i].split(" ");
+
+  console.log(`Case #${i + 1}: ${parseInt(arr2[0]) + parseInt(arr2[1])}`);
 }
