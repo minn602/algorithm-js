@@ -99,3 +99,19 @@ for (let i = 0; i < n; i++) {
 
   console.log(`Case #${i + 1}: ${parseInt(arr2[0]) + parseInt(arr2[1])}`);
 }
+
+//11022번
+let [n, ...arr] = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
+
+n = Number(n);
+arr = arr.map((el) => Number(el));
+
+for (let i = 0; i < n; i++) {
+  let nums = arr[i].split(" ");
+
+  console.log(`Case #${i + 1}: ${nums[0]} + ${nums[1]} = ${nums[0] + nums[1]}`);
+}
