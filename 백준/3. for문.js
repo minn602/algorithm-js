@@ -115,3 +115,43 @@ for (let i = 0; i < n; i++) {
 
   console.log(`Case #${i + 1}: ${nums[0]} + ${nums[1]} = ${nums[0] + nums[1]}`);
 }
+
+//2438번
+const input = require("fs").readFileSync("/dev/stdin").toString().trim();
+const num = Number(input);
+
+let str = "";
+
+for (let i = 1; i <= num; i++) {
+  str += "*";
+  console.log(str);
+}
+
+//2439번
+const input = requir("fs").readFileSync("/dev/stdin").toString().trim();
+const num = Number(input);
+
+for (let i = 1; i <= 5; i++) {
+  let str = "";
+  str += " ".repeat(5 - i);
+  str += "*".repeat(i);
+  console.log(str);
+}
+
+//10871번
+let [input, arr] = require("fs")
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n");
+input = input.split(" ");
+arr = arr.split(" ");
+
+let answer = [];
+for (let i = 0; i < Number(input[0]); i++) {
+  if (Number(arr[i]) < Number(input[1])) {
+    answer.push(arr[i]);
+  }
+}
+
+console.log(answer.join(" ").trim());
